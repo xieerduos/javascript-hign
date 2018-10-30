@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>22-数组的forEach方法</title>
+</head>
+
+<body>
+    <script>
+
+        // 22-数组的forEach方法
+        var m = ['22', true, 1, 99, 92];
+        m.forEach(function(item, index, array){
+            // item是遍历的每个项
+            // index项对应数组的索引
+            // 当前数组
+            item = item + '#';
+            console.log('index' + index +  '   ' + item);
+            console.log(array); 
+        })
+    // console.log(m);
+    </script>
+</body>
+
+</html>

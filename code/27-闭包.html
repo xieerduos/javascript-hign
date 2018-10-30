@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    // 定义了一个外层的函数
+    function foo(x) {
+      var tmp = 3;  // 定义了一个局部的变量 tmp
+
+      return function (y) {   // 把一个函数作为返回值返回。
+        console.log(x + y + (++tmp)); //  y,   tmp   x   bar
+      };
+    }
+
+
+    // 闭包的理解，我认为，可以从闭包的应用，优点，缺点去写：
+    // 闭包的应用：
+    // 1.匿名自执行函数。
+    // 2.循环注册dom事件的index。
+    // 3.setTimeout的闭包应用。
+    // 优点：
+    // 1.我们用闭包可以在对象的继承中去模拟一些私有变量。
+    // 缺点：
+    // 1.闭包会导致内存驻留，如果大量对象的闭包环境，注意内存消耗。
+    // 2.闭包会导致js执行效率下降。（目前v8引擎已经对闭包做了很多性能的优化，基本不用考虑）。
+
+
+    // 调用foo方法执行。并把返回的函数给了 bar变量。
+    var bar = foo(2);  // 此时bar指向了 匿名函数。bar是一个闭包：函数 + x tmp
+    bar(10);
+    bar(20);
+
+
+    function d() {
+      var a = 10;
+      console.log(a);
+    }
+
+    d();
+  </script>
+</body>
+</html>

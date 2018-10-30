@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-函数参数的的练习</title>
+</head>
+
+<body>
+    <script>
+        // function max(a, b) {
+        //     // for(var i in arguments)
+        //     // console.log(arguments);
+        //     for(var i = 0; i < arguments.length; i++){
+        //         console.log(arguments[i]); // 打印参数
+        //     }
+
+        //     if( a > b ) {
+        //         return a;
+        //     } else {
+        //         return b;
+        //     }
+        // }
+        // // console.log(max.length);
+        // // var t = max (9, 10);
+        // // console.log(t);
+        // var m = max(9, 10, 11, 2, 33, 18);
+        // console.log(m);
+
+
+
+        // 函数在未定义之前就可以直接使用，因为声明的函数会提示到代码的顶部。
+
+        var m = myMax(10, 9, 2, 33, 18, 19)
+        console.log(m); // m => 33
+
+        function myMax() {
+            // 如果调用的地方没有传递参数，那么直接返回NaN
+            if (arguments.length <= 0) {
+                return NaN; // return 语句执行，当前函数立即结束
+            }
+
+            var max = arguments[0];
+            // 获取实参：使用arguments,它是一个类数组。length属性是实参的个数。
+
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+
+            return max;
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

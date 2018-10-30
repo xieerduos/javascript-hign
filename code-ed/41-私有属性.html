@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>私有属性</title>
+</head>
+
+<body>
+    <script>
+        function Persion() {
+            var age = 0;
+            this.getAge = function () {
+                return age;
+            }
+            this.setAge = function (num) {
+                age = num;  
+            }
+        }    
+
+        var p = new Persion();
+        p.setAge(93);
+        console.log(p.getAge())
+
+
+
+        // function Persion() {
+        //     var age = 0;
+        //     return {
+        //         getAge : function () {
+        //             return age;
+        //         },
+        //         setAge : function (num) {
+        //             age = num;
+        //         }
+        //     }
+        // }
+
+        // var p = new Persion();
+        // p.setAge(93);
+        // console.log(p.getAge())
+
+
+
+    </script>
+</body>
+
+</html>

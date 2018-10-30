@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型创建对象</title>
+</head>
+
+<body>
+    <h1>原型创建对象 </h1>
+    <script>
+        // 33 - 原型创建对象
+
+        function Cat() { }
+
+        Cat.prototype.age = 19;
+        Cat.prototype.name = 'Bucky';
+
+        Cat.prototype.run = function (a) {
+            console.log(a + 'running ...');
+        };
+
+        // c1.__proto__ === Cat.prototype  //true
+        var c1 = new Cat();
+        var c2 = new Cat();
+        // 优点：
+        //    所有的对象都会共享  原型上的属性和方法。
+        // 缺点：
+        //    如果对象需要自己特有的属性值，不与其他对象共享，则必须跟构造函数模式进行配合
+
+        
+        // 优点:说明:构造函数的原型对象中的成员，可以被该构造函数创建出来的所有对象访问,而且，所有的对象共享该对象,所以，我们可以将构造函数中需要创建的函数，放到原型对象中存储,这样就解决 全局变量污染的问题 以及 代码结构混乱的问题
+
+    </script>
+</body>
+
+</html>

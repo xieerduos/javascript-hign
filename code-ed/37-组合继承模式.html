@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合继承模式</title>
+</head>
+
+<body>
+    <script>
+
+        // 组合继承模式
+        // 组合的原型继承和借用构造函数继承    
+        // 父类
+        function Animal(age, name) {
+            this.age = age;
+            this.name = name;
+            this.foods = ['风', '马', '牛'];
+        }
+
+        Animal.prototype.run = function () {
+            console.log(this.name + '  running');
+        }
+
+        function Cat(age, name) {
+            Animal.call(this, age, name);
+        }
+
+        Cat.prototype = new Animal();
+        Cat.prototype.constructor = Cat;
+
+        var c = new Cat(19,'dddd');
+        c.run();
+    </script>
+</body>
+
+</html>
